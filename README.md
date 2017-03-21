@@ -1,3 +1,25 @@
+# Installation
+
+You can install `cryfsm` in a cabal sandbox as follows:
+
+    > cabal sandbox init
+    > cabal install
+
+You can then execute `cryfsm` using:
+
+    > cabal exec cryfsm
+
+See [`cryfsm.cabal`](cryfsm.cabal) for a listing of compatible cryptol versions.
+
+## Installation for `ghc-8`
+
+`cryfsm` assumes `ghc-7` is installed.  To install `cryfsm` (within a cabal
+sandbox) for `ghc-8`, run the following:
+
+    > cabal sandbox init
+    > cabal install happy
+    > cabal install --with-compiler=ghc-7.10
+
 # Tutorial: comparisons
 
 The `cryfsm` tool can be used to convert certain expressions of the Cryptol
@@ -460,24 +482,3 @@ of `outputs` gives the cryptol value output by the original function.
 
 [//]: # (TODO: too much English, use formatting to make this more vgrep-able)
 
-# Installation
-
-Once you have installed cryptol itself, installing `cryfsm` should be as simple
-as typing `cabal install` from within this repository. By default, this places
-executables in `~/.cabal/bin`. See [`cryfsm.cabal`](cryfsm.cabal) for a listing
-of compatible cryptol versions. There are detailed instructions for building
-cryptol from source [in the cryptol
-README](https://github.com/GaloisInc/cryptol/#building-cryptol-from-source).
-
-## Installation in ArchLinux
-
-`cryfsm` requires `ghc-7`, whereas `ghc-8` is the default on archlinux.  So
-to install `cryfsm` (within a cabal sandbox), run the following:
-
-    > cabal sandbox init
-    > cabal install happy
-    > cabal install --with-compiler=ghc-7.10
-
-You can then execute `cryfsm` using:
-
-    > cabal exec cryfsm
